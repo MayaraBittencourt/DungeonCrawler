@@ -8,11 +8,8 @@ def main():
 
     while True:
         command = input('>')
-
-        if command == 'look':
-            print(currentRoom.get_description())
-        else:
-            print ('Não entendi.')
+        result = currentRoom.execute_command(command)
+        print (result)
 
 if __name__ == "__main__":
      main()
