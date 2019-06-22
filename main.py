@@ -2,15 +2,19 @@ from room import *
 
 def main():
     print('DungeonCrawler')
-    currentRoom = Room('Você esta em uma caverna!')
+    southNeighbor = Room('Você esta em outra sala', None)
+    currentRoom = Room('Você esta em uma caverna!', southNeighbor)
 
     print(currentRoom.get_description())
 
     while True:
         command = input('>')
         result = currentRoom.execute_command(command)
-        print (result)
+        currentRoom = result.currentRoom
+        print (result.toPrint)
+
+
 
 if __name__ == "__main__":
-     main()
-
+   main()
+   
